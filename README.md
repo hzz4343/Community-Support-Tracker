@@ -4,6 +4,6 @@ This is a Community Support Tracker, which will help users monitor and manage va
 
 ## Project Members
 
-Student 1: Zizhang He - Donation Tracker Component
-Student 2: Sion Kim - Volunteer Hours Tracker Component
+Student 1: Zizhang He - Donation Tracker Component  
+Student 2: Sion Kim - Volunteer Hours Tracker Component  
 Student 3: Zachary Lam - Event Signup Component
