@@ -4,4 +4,6 @@ This is a Community Support Tracker, which will help users monitor and manage va
 
 ## Project Members
 
-Zizhang He, Sion Kim, Zachary Lam
+Student 1: Zizhang He
+Student 2: Sion Kim
+Student 3: Zachary Lam
