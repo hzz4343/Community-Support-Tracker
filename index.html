@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation Tracker</title>
+  </head>
+  <body>
+    <header>
+      <h1>PiXELL River Finance</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="template.html">Home</a>
+          </li>
+          <li>
+            <a href="donation_tracker.html">Donation Tracker</a>
+          </li>
+          <li>
+            <a href="volunteer_hours_tracker.html">Volunteer Hours Tracker</a>
+          </li>
+          <li>
+            <a href="event_signup.html">Event Signup</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Add a New Donation</h2>
+        <form id="donation-form" action="#">
+          <div>
+            <label for="charity-name">Charity Name:</label>
+            <input type="text" id="charity-name" name="charity_name" required />
+          </div>
+          <div>
+            <label for="donation-amount">Donation Amount:</label>
+            <input
+              type="number"
+              id="donation-amount"
+              name="donation_amount"
+              required
+            />
+          </div>
+          <div>
+            <label for="donation-date">Date of Donation:</label>
+            <input
+              type="date"
+              id="donation-date"
+              name="donation_date"
+              required
+            />
+          </div>
+          <div>
+            <label for="donor-comment">Donor Comment/Message:</label>
+            <textarea
+              id="donor-comment"
+              name="donor_comment"
+              rows="4"
+            ></textarea>
+          </div>
+          <div>
+            <button type="submit">Submit Donation</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Donation Tracker. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
