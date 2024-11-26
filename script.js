@@ -1,46 +1,60 @@
-const formNode = document.getElementById('donation-form');
+let onFormSubmit;
 
-formNode.addEventListener('submit', (event) => {
-  event.preventDefault();
+if (typeof document !== 'undefined') {
+  const formNode = document.getElementById('donation-form');
 
-  const charityName = document.getElementById('charity-name').value;
-  const donationAmount = document.getElementById('donation-amount').value;
-  const donationDate = document.getElementById('donation-date').value;
-  const donorComment = document.getElementById('donor-comment').value;
+  onFormSubmit = (event) => {
+    event.preventDefault();
 
-  if (!charityName) {
-    alert('Charity Name is required.');
-    return;
-  }
+    const charityName = document.getElementById('charity-name').value;
+    const donationAmount = document.getElementById('donation-amount').value;
+    const donationDate = document.getElementById('donation-date').value;
+    const donorComment = document.getElementById('donor-comment').value;
 
-  if (!donationAmount || Number(donationAmount) <= 0) {
-    alert('Donation Amount must be a valid positive number.');
-    return;
-  }
+    // Validate the form 
+    const inputNodes = Array.from(document.getElementsByClassName("formInput"))
+    let errorFlag = false
 
-  if (!donationDate) {
-    alert('Date of Donation is required.');
-    return;
-  }
+    inputNodes.forEach((inputNode) => {
+      const inputValue = inputNode.value
+      const errorSpan = document.getElementById(`${inputNode.id}-error`);
+      if (inputNode.id === "donation-amount" && parseFloat(inputValue) <= 0) {
+        errorSpan.style.visibility = "visible";
+        errorSpan.textContent = "Donation Amount must be a valid positive number.";
+        errorFlag = true;
+      } else if (inputValue == "") {
+        errorSpan.style.visibility = "visible"
+        errorFlag = true
+      } else {
+        errorSpan.style.visibility = "hidden"
+      }
+    })
 
-  if (!donorComment) {
-    alert('Donor message is required.');
-    return;
-  }
+    if (errorFlag) {
+      return
+    }
 
-  // If validation passes, create a temporary data object
-  const donationData = {
-    charityName: charityName,
-    donationAmount: parseFloat(donationAmount),
-    donationDate: donationDate,
-    donorComment: donorComment,
+    // If validation passes, create a temporary data object
+    const donationData = {
+      charityName: charityName,
+      donationAmount: parseFloat(donationAmount),
+      donationDate: donationDate,
+      donorComment: donorComment,
+    };
+
+    console.log(donationData);
+
+    document.getElementById('donation-form').reset();
+
+    alert('Donation submitted successfully!');
+
+    return donationData;
   };
 
-  console.log(donationData);
+  formNode.addEventListener('submit', onFormSubmit);
+}
 
-  document.getElementById('donation-form').reset();
-
-  alert('Donation submitted successfully!');
-
-  return donationData;
-});
+if (typeof window === 'undefined') {
+  // window object represents the browser window
+  module.exports = { onFormSubmit };
+} 

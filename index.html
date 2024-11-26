@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donation Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
@@ -31,33 +32,63 @@
         <form id="donation-form" action="#">
           <div>
             <label for="charity-name">Charity Name:</label>
-            <input type="text" id="charity-name" name="charity_name" required />
+            <input
+              type="text"
+              class="formInput"
+              id="charity-name"
+              name="charity-name"
+            />
+            <span
+              id="charity-name-error"
+              class="error-message"
+              style="visibility: hidden"
+              >Charity Name is required.</span
+            >
           </div>
           <div>
             <label for="donation-amount">Donation Amount:</label>
             <input
               type="number"
+              class="formInput"
               id="donation-amount"
-              name="donation_amount"
-              required
+              name="donation-amount"
             />
+            <span
+              id="donation-amount-error"
+              class="error-message"
+              style="visibility: hidden"
+              >Donation Amount must be a valid positive number.</span
+            >
           </div>
           <div>
             <label for="donation-date">Date of Donation:</label>
             <input
               type="date"
+              class="formInput"
               id="donation-date"
-              name="donation_date"
-              required
+              name="donation-date"
             />
+            <span
+              id="donation-date-error"
+              class="error-message"
+              style="visibility: hidden"
+              >Date of Donation is required.</span
+            >
           </div>
           <div>
             <label for="donor-comment">Donor Comment/Message:</label>
             <textarea
+              class="formInput"
               id="donor-comment"
-              name="donor_comment"
+              name="donor-comment"
               rows="4"
             ></textarea>
+            <span
+              id="donor-comment-error"
+              class="error-message"
+              style="visibility: hidden"
+              >Donor message is required.</span
+            >
           </div>
           <div>
             <button type="submit">Submit Donation</button>
