@@ -52,9 +52,14 @@ if (typeof document !== 'undefined') {
   };
 
   formNode.addEventListener('submit', onFormSubmit);
+
+}
+
+function addFormListener(formNode, callback) {
+  formNode.addEventListener("submit", callback);
 }
 
 if (typeof window === 'undefined') {
   // window object represents the browser window
-  module.exports = { onFormSubmit };
+  module.exports = { onFormSubmit, addFormListener };
 } 
