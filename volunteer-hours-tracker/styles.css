@@ -10,12 +10,18 @@ body {
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    padding-top: 3rem;
 }
 
 header {
     font-size: 120%;
-    width: 80%;
-    margin-bottom: 3%;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0;
+    background-color: #121212;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 header nav ul {
@@ -23,6 +29,7 @@ header nav ul {
     display: flex;
     justify-content: center;
     padding: 0;
+    margin: 0;
 }
 
 header nav ul li {
