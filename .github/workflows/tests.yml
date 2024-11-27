@@ -1,0 +1,44 @@
+name: Run Jest Tests
+
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+
+# decide what trigger will cause our jobs to run
+on: [pull_request]
+
+# what runs when the "on" trigger occurs
+jobs:
+  build:
+    # what operating system the job runs on
+    runs-on: ubuntu-latest
+
+    # what occurs during the job
+    steps:
+      - uses: actions/checkout@v4
+      - name: use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Jest Tests
+        run: npm test
+
+      - name: Archive Jest Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-test-results
+          path: test-results/jest/
+
+        # ...archiving step...
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: test-results/jest/*.xml
