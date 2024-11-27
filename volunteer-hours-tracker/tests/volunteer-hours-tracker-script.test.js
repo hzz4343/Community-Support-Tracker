@@ -1,5 +1,5 @@
 const { JSDOM } = require("jsdom");
-const { onFormSubmit } = require("../script");
+const { onFormSubmit } = require("../volunteer-hours-tracker-script");
 
 beforeEach(() => {
     global.alert = jest.fn();
@@ -24,7 +24,7 @@ test("Test that the function is triggered on form submission.", () => {
     expect(mockPreventDefault).toHaveBeenCalled();
 });
 
-test("Test that the function correctly collects form data.", () => {
+test("Test that the function correctly collects form data. & Test that the temporary data object is correctly populated with form data.", () => {
     const mockPreventDefault = jest.fn();
     const dom = new JSDOM(`
         <!DOCTYPE html>
@@ -133,30 +133,4 @@ test("Test if the function correctly identifies and flags when the experience ra
     const result = onFormSubmit(mockEvent);
     expect(result).toEqual(undefined);
     expect(global.alert).toHaveBeenCalledWith("Submission failed!");
-});
-
-test("Test that the temporary data object is correctly populated with form data.", () => {
-    const mockPreventDefault = jest.fn();
-    const dom = new JSDOM(`
-        <!DOCTYPE html>
-        <form id="volunteer-hours-form">
-            <input id="charityNameInput" value="Sion Kim" />
-            <input id="hoursVolunteeredInput" value="7" />
-            <input id="whenVolunteertingDateInput" value="2024-08-30" />
-            <input type="radio" name="rating" value="5" checked />
-        </form>
-    `);
-    global.document = dom.window.document;
-    const mockEvent = {
-        preventDefault: mockPreventDefault,
-        target: document.querySelector("#volunteer-hours-form"),
-    };
-    const result = onFormSubmit(mockEvent);
-    expect(global.alert).toHaveBeenCalledWith("Thank you for Submission!");
-    expect(result.data).toEqual({
-        charityName: "Sion Kim",
-        hoursVolunteered: 7,
-        volunteeringDate: "2024-08-30",
-        ratings: ["5"],
-    });
 });
