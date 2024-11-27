@@ -58,6 +58,7 @@ test("Test if the function correctly identifies and flags when any of the requir
             <input id="charityNameInput" value="" />
             <input id="hoursVolunteeredInput" value="" />
             <input id="whenVolunteertingDateInput" value="" />
+            <input type="radio" name="rating" value="" />
         </form>
     `);
     global.document = dom.window.document;
