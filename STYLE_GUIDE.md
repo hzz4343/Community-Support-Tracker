@@ -36,6 +36,13 @@
 
 - https://www.w3schools.com/howto/howto_css_star_rating.asp
 
+```javascript
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+```
+
 ## Overall & Details
 
 - Dark mode
