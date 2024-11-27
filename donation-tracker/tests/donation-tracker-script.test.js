@@ -1,4 +1,4 @@
-const { addFormListener, onFormSubmit, collectDonationData, validationForm, validateForm } = require('../script');
+const { addFormListener, onFormSubmit, collectDonationData, validationForm, validateForm } = require('../donation-tracker-script');
 const { JSDOM } = require('jsdom');
 
 test("setupForm correctly adds the callback", () => {
@@ -213,9 +213,6 @@ test("test temporary data object is populated", () => {
 
   // Mock the document in global scope
   global.document = dom.window.document;
-
-  const mockValidateForm = jest.fn(validationForm);
-  const mockCollectDonationData = jest.fn(collectDonationData);
 
   // Act
   const mockEvent = { preventDefault: jest.fn() };
