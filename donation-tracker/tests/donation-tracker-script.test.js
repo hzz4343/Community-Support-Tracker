@@ -214,9 +214,6 @@ test("test temporary data object is populated", () => {
   // Mock the document in global scope
   global.document = dom.window.document;
 
-  const mockValidateForm = jest.fn(validationForm);
-  const mockCollectDonationData = jest.fn(collectDonationData);
-
   // Act
   const mockEvent = { preventDefault: jest.fn() };
   const result = onFormSubmit(mockEvent);
