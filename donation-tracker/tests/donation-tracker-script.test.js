@@ -1,4 +1,4 @@
-const { addFormListener, onFormSubmit, collectDonationData, validationForm, validateForm } = require('../script');
+const { addFormListener, onFormSubmit, collectDonationData, validationForm, validateForm } = require('../donation-tracker-script');
 const { JSDOM } = require('jsdom');
 
 test("setupForm correctly adds the callback", () => {
