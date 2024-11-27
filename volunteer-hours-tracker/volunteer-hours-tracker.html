@@ -1,85 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Community Support Tracker</title>
-    <link rel="stylesheet" href="./volunteer-hours-tracker-styles.css">
-</head>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>PiXELL River Finance</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/index.html">Home</a>
-                </li>
-                <li>
-                    <a href="/donation-tracker/index.html">Donation Tracker</a>
-                </li>
-                <li>
-                    <a href="/volunteer-hours-tracker/volunteer-hours.html">Volunteer Hours Tracker</a>
-                </li>
-                <li>
-                    <a href="/event-signup/index.html">Event Signup</a>
-                </li>
-            </ul>
-        </nav>
+      <h1>PiXELL River Finance</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/index.html">Home</a>
+          </li>
+          <li>
+            <a href="/donation-tracker/donation-tracker.html"
+              >Donation Tracker</a
+            >
+          </li>
+          <li>
+            <a href="/volunteer-hours-tracker/volunteer-hours-tracker.html"
+              >Volunteer Hours Tracker</a
+            >
+          </li>
+          <li>
+            <a href="/event-signup/event-signup.html">Event Signup</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main>
-        <h2>Volunteer Hours Tracker</h2>
-        <form id="volunteer-hours-form" action="httpbin.org/post" method="post">
+    <main id="main">
+      <h2>Volunteer Hours Tracker</h2>
+      <form id="volunteer-hours-form" action="httpbin.org/post" method="post">
+        <div class="charityName">
+          <label for="charityNameInput">Charity Name</label>
+          <input id="charityNameInput" name="charityNameInput" type="text" />
+          <span id="charityNameInputError" class="error-message"></span>
+        </div>
 
-            <div class="charityName">
-                <label for="charityNameInput">Charity Name</label>
-                <input id="charityNameInput" name="charityNameInput" type="text">
-                <span id="charityNameInputError" class="error-message"></span>
-            </div>
+        <div class="hoursVolunteered">
+          <label for="hoursVolunteeredInput">Hours Volunteered</label>
+          <input
+            id="hoursVolunteeredInput"
+            name="hoursVolunteeredInput"
+            type="number"
+            step="0.5"
+          />
+          <span id="hoursVolunteeredInputError" class="error-message"></span>
+        </div>
 
-            <div class="hoursVolunteered">
-                <label for="hoursVolunteeredInput">Hours Volunteered</label>
-                <input id="hoursVolunteeredInput" name="hoursVolunteeredInput" type="number" step="0.5">
-                <span id="hoursVolunteeredInputError" class="error-message"></span>
-            </div>
+        <div class="whenVolunteertingDate">
+          <label for="whenVolunteertingDateInput">Volunteering Date</label>
+          <input
+            id="whenVolunteertingDateInput"
+            name="whenVolunteertingDateInput"
+            type="date"
+          />
+          <span
+            id="whenVolunteertingDateInputError"
+            class="error-message"
+          ></span>
+        </div>
 
-            <div class="whenVolunteertingDate">
-                <label for="whenVolunteertingDateInput">Volunteering Date</label>
-                <input id="whenVolunteertingDateInput" name="whenVolunteertingDateInput" type="date">
-                <span id="whenVolunteertingDateInputError" class="error-message"></span>
-            </div>
+        <div class="rate">
+          <fieldset>
+            <legend>Volunteer Experience Rating</legend>
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5" class="fa fa-star"></label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4" class="fa fa-star"></label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3" class="fa fa-star"></label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2" class="fa fa-star"></label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1" class="fa fa-star"></label>
+          </fieldset>
+          <span id="ratingError" class="error-message"></span>
+        </div>
 
-            <div class="rate">
-                <fieldset>
-                    <legend>Volunteer Experience Rating</legend>
-                    <input type="radio" id="star5" name="rating" value="5" />
-                    <label for="star5" class="fa fa-star"></label>
-                    <input type="radio" id="star4" name="rating" value="4" />
-                    <label for="star4" class="fa fa-star"></label>
-                    <input type="radio" id="star3" name="rating" value="3" />
-                    <label for="star3" class="fa fa-star"></label>
-                    <input type="radio" id="star2" name="rating" value="2" />
-                    <label for="star2" class="fa fa-star"></label>
-                    <input type="radio" id="star1" name="rating" value="1" />
-                    <label for="star1" class="fa fa-star"></label>
-                </fieldset>
-                <span id="ratingError" class="error-message"></span>
-            </div>
-
-            <div class="submit">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+        <div class="submit">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </main>
     <footer>
-        <p>&copy; 2024 Volunteer Hours Tracker. All rights reserved.</p>
+      <p>&copy; 2024 Volunteer Hours Tracker. All rights reserved.</p>
     </footer>
     <script src="./volunteer-hours-tracker-script.js"></script>
-</body>
-
+  </body>
 </html>

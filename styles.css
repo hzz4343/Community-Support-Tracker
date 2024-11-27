@@ -28,6 +28,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000; /* Ensure header stays on top */
 }
 
 header nav ul {
@@ -51,6 +52,11 @@ header nav ul li a {
 
 header nav ul li a:hover {
   color: #ff9500;
+}
+
+/* Main */
+main {
+  padding-top: calc(1rem + 60px); /* Adjust 60px to match the header height */
 }
 
 /* Form */
