@@ -21,6 +21,12 @@
 
 - https://fonts.google.com/specimen/Archivo
 
+```javascript
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,700&display=swap" rel="stylesheet">
+```
+
 ## Color
 
 - https://blog.karenying.com/posts/50-shades-of-dark-mode-gray
