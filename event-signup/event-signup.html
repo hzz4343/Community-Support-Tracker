@@ -23,70 +23,67 @@
       <nav>
         <ul>
           <li>
-            <a href="index.html">Home</a>
+            <a href="/index.html">Home</a>
           </li>
           <li>
-            <a href="donation-tracker/donation-tracker.html"
+            <a href="/donation-tracker/donation-tracker.html"
               >Donation Tracker</a
             >
           </li>
           <li>
-            <a href="volunteer-hours-tracker/volunteer-hours-tracker.html"
+            <a href="/volunteer-hours-tracker/volunteer-hours-tracker.html"
               >Volunteer Hours Tracker</a
             >
           </li>
           <li>
-            <a href="event_signup.html">Event Signup</a>
+            <a href="/event-signup/event-signup.html">Event Signup</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-        <section>
+      <section>
+        <h2>Register For An Event</h2>
 
-            <h2>Register For An Event</h2>
+        <form id="event-form" action="https://httpbin.org/post" method="post">
+          <div>
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" name="event_name" />
 
-            <form id="event-form" action="https://httpbin.org/post" method="post">
+            <span id="event-error" class="error-message"></span>
+          </div>
 
-              <div>
-                <label for="event-name">Event Name:</label>
-                <input type="text" id="event-name" name="event_name" />
+          <div>
+            <label for="rep-name">Company Representative Name:</label>
+            <input type="text" id="rep-name" name="company_rep_name" />
 
-                <span id="event-error" class="error-message"></span>
-              </div>
+            <span id="name-error" class="error-message"></span>
+          </div>
 
-              <div>
-                  <label for="rep-name">Company Representative Name:</label>
-                  <input type="text" id="rep-name" name="company_rep_name" />
+          <div>
+            <label for="rep-email">Representative's Email:</label>
+            <input type="text" id="rep-email" name="rep_email" />
 
-                  <span id="name-error" class="error-message"></span>
-              </div>
+            <span id="email-error" class="error-message"></span>
+          </div>
 
-              <div>
-                  <label for="rep-email">Representative's Email:</label>
-                  <input type="text" id="rep-email" name="rep_email" />
+          <div>
+            <label for="role-selection">Select Role:</label>
+            <select id="role-selection" name="role">
+              <option value=""></option>
+              <option value="sponsor">Sponsor</option>
+              <option value="participant">Participant</option>
+              <option value="organizer">Organizer</option>
+            </select>
 
-                  <span id="email-error" class="error-message"></span>
-              </div>
+            <span id="role-error" class="error-message"></span>
+          </div>
 
-              <div>
-                  <label for="role-selection">Select Role:</label>
-                  <select id="role-selection" name="role">
-                      <option value=""></option>
-                      <option value="sponsor">Sponsor</option>
-                      <option value="participant">Participant</option>
-                      <option value="organizer">Organizer</option>
-                  </select>
-
-                  <span id="role-error" class="error-message"></span>
-              </div>
-
-              <div>
-                <button type="submit">Submit Registration</button>
-              </div>
-
-            </form>
-          </section>
+          <div>
+            <button type="submit">Submit Registration</button>
+          </div>
+        </form>
+      </section>
     </main>
     <footer>
       <p>&copy; 2024 Event Signup. All rights reserved.</p>
