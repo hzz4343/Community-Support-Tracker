@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Event Signup</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>PiXELL River Finance</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="donation-tracker/donation-tracker.html"
+              >Donation Tracker</a
+            >
+          </li>
+          <li>
+            <a href="volunteer-hours-tracker/volunteer-hours-tracker.html"
+              >Volunteer Hours Tracker</a
+            >
+          </li>
+          <li>
+            <a href="event_signup.html">Event Signup</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <section>
+
+            <h2>Register For An Event</h2>
+
+            <form id="event-form" action="https://httpbin.org/post" method="post">
+
+              <div>
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" name="event_name" />
+
+                <span id="event-error" class="error-message"></span>
+              </div>
+
+              <div>
+                  <label for="rep-name">Company Representative Name:</label>
+                  <input type="text" id="rep-name" name="company_rep_name" />
+
+                  <span id="name-error" class="error-message"></span>
+              </div>
+
+              <div>
+                  <label for="rep-email">Representative's Email:</label>
+                  <input type="text" id="rep-email" name="rep_email" />
+
+                  <span id="email-error" class="error-message"></span>
+              </div>
+
+              <div>
+                  <label for="role-selection">Select Role:</label>
+                  <select id="role-selection" name="role">
+                      <option value=""></option>
+                      <option value="sponsor">Sponsor</option>
+                      <option value="participant">Participant</option>
+                      <option value="organizer">Organizer</option>
+                  </select>
+
+                  <span id="role-error" class="error-message"></span>
+              </div>
+
+              <div>
+                <button type="submit">Submit Registration</button>
+              </div>
+
+            </form>
+          </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Event Signup. All rights reserved.</p>
+    </footer>
+
+    <script src="event-signup-script.js"></script>
+  </body>
+</html>
