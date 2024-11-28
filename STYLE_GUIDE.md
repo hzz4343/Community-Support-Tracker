@@ -27,12 +27,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,700&display=swap" rel="stylesheet">
 ```
 
-## Color
+### Color
 
 - https://blog.karenying.com/posts/50-shades-of-dark-mode-gray
 - https://colorswall.com/palette/40133
 
-## Star Rating Design
+### Star Rating Design
 
 - https://www.w3schools.com/howto/howto_css_star_rating.asp
 
