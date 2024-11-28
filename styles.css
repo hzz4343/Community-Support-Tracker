@@ -1,9 +1,3 @@
-.error-message {
-  color: red;
-  font-size: 0.9em;
-  font-weight: bold;
-}
-
 body {
   font-family: 'Archivo', sans-serif;
   background-color: #121212;
@@ -120,7 +114,7 @@ button:hover {
 
 .error-message {
   color: #ff3b30;
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin-top: 1%;
   display: block;
   visibility: hidden;
