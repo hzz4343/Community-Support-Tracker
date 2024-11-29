@@ -96,7 +96,7 @@ form input:focus {
   border-color: #ff9500;
 }
 
-form button {
+button {
   width: 80%;
   padding: 0.625em 1.25em;
   background-color: #282828;
@@ -105,9 +105,28 @@ form button {
   border-radius: 0.6rem;
   cursor: pointer;
   text-align: center;
+  margin: 1%;
 }
 
 button:hover {
+  background-color: #ff9500;
+  color: #181818;
+}
+
+
+td button {
+  width: 80%;
+  padding: 0.625em 2em;
+  background-color: #ff3b30;
+  color: #181818;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  text-align: center;
+  margin: 1%;
+}
+
+td button:hover {
   background-color: #ff9500;
   color: #181818;
 }
@@ -151,4 +170,28 @@ button:hover {
 
 .rate input:checked ~ label {
   color: #ff9500;
+}
+
+#summary-section {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#summary-section h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px; 
+}
+
+#summary-section p#total-hours {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff9500;
+  margin-top: 0;
+  margin-bottom: 0;
 }
