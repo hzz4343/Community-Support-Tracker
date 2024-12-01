@@ -40,19 +40,80 @@ function onFormSubmit(event) {
   if (isError == false) {
     // If validation passes, create a temporary data object
 
-    const donationData = collectDonationData()
+    const donationData = collectDonationData();
 
     document.getElementById('donation-form').reset();
-    const successSpan = document.getElementById('successSubmission')
-    successSpan.style.visibility = "visible"
+    const successSpan = document.getElementById('successSubmission');
+    successSpan.style.visibility = "visible";
 
-    console.log(donationData)
+    saveSubmissionData(donationData);
+    displaySubmissionData();
+    calculateDonation()
+
+    console.log(donationData);
     return donationData;
   }
 };
 
 function addFormListener(formNode, callback) {
   formNode.addEventListener("submit", callback);
+}
+
+function saveSubmissionData(data) {
+  let submissionData = localStorage.getItem("donation-data");
+  if (submissionData == null) {
+    submissionData = [];
+  } else {
+    submissionData = JSON.parse(submissionData);
+  }
+  submissionData.push(data);
+  localStorage.setItem("donation-data", JSON.stringify(submissionData));
+}
+
+function displaySubmissionData() {
+  const donationTable = document.querySelector("#donation-table tbody");
+  donationTable.innerHTML = "";
+
+  let submissionData = localStorage.getItem("donation-data");
+
+  if (submissionData === null) {
+    submissionData = [];
+  } else {
+    submissionData = JSON.parse(submissionData);
+  }
+
+  submissionData.forEach(({ charityName, donationAmount, donationDate, donorComment }, index) => {
+    const row = donationTable.insertRow();
+    row.insertCell(0).textContent = charityName;
+    row.insertCell(1).textContent = donationAmount;
+    row.insertCell(2).textContent = donationDate;
+    row.insertCell(3).textContent = donorComment;
+    row.insertCell(4).innerHTML = `<button onclick="deleteLogRow(${index})">Delete</button>`;
+  });
+}
+
+function deleteLogRow(index) {
+  let submissionData = localStorage.getItem("donation-data");
+  submissionData = JSON.parse(submissionData);
+
+  submissionData.splice(index, 1);
+
+  localStorage.setItem("donation-data", JSON.stringify(submissionData));
+
+  displaySubmissionData();
+  calculateDonation()
+}
+
+function calculateDonation() {
+  let data = JSON.parse(localStorage.getItem("donation-data"));
+  let amount = 0;
+
+  data.forEach(({ donationAmount }) => {
+    amount += donationAmount
+  })
+
+  const amountNode = document.getElementById("total-amount")
+  amountNode.textContent = amount;
 }
 
 // if window is not undefined, meaning, we are in a web app
@@ -62,7 +123,9 @@ if (typeof window !== "undefined") {
   window.onload = () => {
     const formNode = document.getElementById('donation-form');
     formNode.addEventListener('submit', onFormSubmit);
+    displaySubmissionData()
+    calculateDonation()
   };
 } else {
-  module.exports = { addFormListener, onFormSubmit, validateForm, collectDonationData }
+  module.exports = { addFormListener, onFormSubmit, validateForm, collectDonationData, saveSubmissionData, displaySubmissionData, calculateDonation, deleteLogRow }
 }
