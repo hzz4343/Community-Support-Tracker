@@ -21,3 +21,13 @@
 ## Directly supplying a callback
 
 - Course Material
+
+## jest.fn for localstorage
+
+- https://stackoverflow.com/questions/32911630/how-do-i-deal-with-localstorage-in-jest-tests
+
+- https://bholmes.dev/blog/mocking-browser-apis-fetch-localstorage-dates-the-easy-way-with-jest/
+
+## Remove from array
+
+- https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript
