@@ -17,7 +17,7 @@ function isValidRating(ratingArray) {
 }
 
 function deleteLog() {
-    localStorage.removeItem("submissionData");
+    localStorage.removeItem("volunteer-data");
     displaySubmissionData();
     calculateTotalHours()
     alert("Log Deleted");
@@ -25,7 +25,7 @@ function deleteLog() {
 }
 
 function saveSubmissionData(neoSubmissionData) {
-    let submissionData = localStorage.getItem("submissionData");
+    let submissionData = localStorage.getItem("volunteer-data");
     console.log("LocalData: JSON", submissionData);
     if (submissionData == null) {
         submissionData = [];
@@ -35,14 +35,14 @@ function saveSubmissionData(neoSubmissionData) {
     console.log("LocalData : Array", submissionData);
     console.log("Neo 2 : Object", neoSubmissionData);
     submissionData.push(neoSubmissionData);
-    localStorage.setItem("submissionData", JSON.stringify(submissionData));
-    console.log("LocalData + Neo : JSON", localStorage.getItem("submissionData"));
+    localStorage.setItem("volunteer-data", JSON.stringify(submissionData));
+    console.log("LocalData + Neo : JSON", localStorage.getItem("volunteer-data"));
 }
 
 function displaySubmissionData() {
     const volunteerHoursTable = document.querySelector("#volunteer-hours-table tbody");
     volunteerHoursTable.innerHTML = "";
-    let submissionData = localStorage.getItem("submissionData");
+    let submissionData = localStorage.getItem("volunteer-data");
     if (submissionData === null) {
         submissionData = [];
     } else {
@@ -59,7 +59,7 @@ function displaySubmissionData() {
 }
 
 function calculateTotalHours() {
-    let submissionData = localStorage.getItem("submissionData");
+    let submissionData = localStorage.getItem("volunteer-data");
     if (submissionData === null) {
         submissionData = [];
     } else {
@@ -73,14 +73,14 @@ function calculateTotalHours() {
 }
 
 function deleteLogRow(index) {
-    let submissionData = localStorage.getItem("submissionData");
+    let submissionData = localStorage.getItem("volunteer-data");
     if (submissionData === null) {
         submissionData = [];
     } else {
         submissionData = JSON.parse(submissionData);
     }
     submissionData.splice(index, 1);
-    localStorage.setItem("submissionData", JSON.stringify(submissionData));
+    localStorage.setItem("volunteer-data", JSON.stringify(submissionData));
     displaySubmissionData();
     calculateTotalHours();
 }
@@ -165,7 +165,7 @@ const onFormSubmit = e => {
             volunteeringDate: formData.volunteeringDate,
             ratings: formData.rating.map(({ value }) => value)
         };
-        console.log("Neo 1 : Object:",submissionData)   
+        console.log("Neo 1 : Object:", submissionData)
         if (typeof window !== "undefined") {
             saveSubmissionData(submissionData);
             displaySubmissionData();
@@ -198,7 +198,7 @@ if (typeof window === "undefined") {
 
     const deleteEle = document.getElementById("delete-log");
     deleteEle.addEventListener("click", deleteLog);
-    
+
     document.addEventListener("DOMContentLoaded", () => {
         displaySubmissionData();
         calculateTotalHours();

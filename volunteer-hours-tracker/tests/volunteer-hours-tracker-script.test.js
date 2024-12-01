@@ -178,14 +178,14 @@ test("Test that data is correctly stored in localStorage.", () => {
     ];
 
     localStorage.getItem = jest.fn((key) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             return JSON.stringify(mockLocalData);
         }
     });
 
     localStorage.setItem = jest.fn((key, value) => {
-        if (key === "submissionData") {
-            mockLocalData = JSON.parse(value); 
+        if (key === "volunteer-data") {
+            mockLocalData = JSON.parse(value);
         }
     });
 
@@ -224,7 +224,7 @@ test("Test that data is correctly retrieved from localStorage and loaded into th
     ];
 
     localStorage.getItem = jest.fn((key) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             return JSON.stringify(mockData);
         }
     });
@@ -257,13 +257,13 @@ test("Test that the summary section correctly calculates and displays the total 
         </div>
     `);
     global.document = dom.window.document;
-    
+
     global.localStorage = {
         getItem: jest.fn(),
         setItem: jest.fn(),
         removeItem: jest.fn()
     };
-    
+
     const mockData = [
         {
             charityName: "Min",
@@ -280,7 +280,7 @@ test("Test that the summary section correctly calculates and displays the total 
     ];
 
     localStorage.getItem = jest.fn((key) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             return JSON.stringify(mockData);
         }
     });
@@ -330,30 +330,30 @@ test("Test that the delete button removes a record from the table.", () => {
     ];
 
     localStorage.getItem = jest.fn((key) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             return JSON.stringify(mockData);
         }
     });
     localStorage.setItem = jest.fn((key, value) => {
-        if (key === "submissionData") {
-            mockData = JSON.parse(value); 
+        if (key === "volunteer-data") {
+            mockData = JSON.parse(value);
         }
     });
 
-    localStorage.setItem("submissionData", JSON.stringify(mockData));
+    localStorage.setItem("volunteer-data", JSON.stringify(mockData));
 
     const iniHTML = document.querySelector("#volunteer-hours-table").innerHTML;
-    console.log("Initial",iniHTML); 
+    console.log("Initial", iniHTML);
 
     displaySubmissionData();
 
     const medHTML = document.querySelector("#volunteer-hours-table").innerHTML;
-    console.log("Medium",medHTML); 
-    
+    console.log("Medium", medHTML);
+
     deleteLogRow(0);
 
     const FinHTML = document.querySelector("#volunteer-hours-table").innerHTML;
-    console.log("Final",FinHTML); 
+    console.log("Final", FinHTML);
 
     const rows = document.querySelectorAll("#volunteer-hours-table tbody tr");
     expect(rows.length).toBe(1);
@@ -404,23 +404,23 @@ test("Test that the delete button removes a record from localStorage.", () => {
     ];
 
     localStorage.getItem = jest.fn((key) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             return JSON.stringify(mockData);
         }
     });
 
     localStorage.setItem = jest.fn((key, value) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             mockData = JSON.parse(value);
         }
     });
 
-    localStorage.setItem("submissionData", JSON.stringify(mockData));
+    localStorage.setItem("volunteer-data", JSON.stringify(mockData));
 
     displaySubmissionData();
     deleteLogRow(0);
 
-    const updatedLocalData = JSON.parse(localStorage.getItem("submissionData"));
+    const updatedLocalData = JSON.parse(localStorage.getItem("volunteer-data"));
 
     expect(updatedLocalData.length).toBe(1);
 
@@ -471,18 +471,18 @@ test("Test that the total volunteered hours in the summary section is updated wh
     ];
 
     localStorage.getItem = jest.fn((key) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             return JSON.stringify(mockData);
         }
     });
 
     localStorage.setItem = jest.fn((key, value) => {
-        if (key === "submissionData") {
+        if (key === "volunteer-data") {
             mockData = JSON.parse(value);
         }
     });
 
-    localStorage.setItem("submissionData", JSON.stringify(mockData));
+    localStorage.setItem("volunteer-data", JSON.stringify(mockData));
 
     displaySubmissionData();
     calculateTotalHours();
