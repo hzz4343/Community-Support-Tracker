@@ -48,6 +48,7 @@ function onFormSubmit(event) {
 
     saveSubmissionData(donationData);
     displaySubmissionData();
+    calculateDonation()
 
     console.log(donationData);
     return donationData;
@@ -72,7 +73,14 @@ function saveSubmissionData(data) {
 function displaySubmissionData() {
   const donationTable = document.querySelector("#donation-table tbody");
   donationTable.innerHTML = "";
-  let submissionData = JSON.parse(localStorage.getItem("donation-data"));
+
+  let submissionData = localStorage.getItem("donation-data");
+
+  if (submissionData === null) {
+    submissionData = [];
+  } else {
+    submissionData = JSON.parse(submissionData);
+  }
 
   submissionData.forEach(({ charityName, donationAmount, donationDate, donorComment }, index) => {
     const row = donationTable.insertRow();
@@ -90,14 +98,22 @@ function deleteLogRow(index) {
 
   submissionData.splice(index, 1);
 
-  if (submissionData.length === 0) {
-    localStorage.removeItem("donation-data");
-  }
-  else {
-    localStorage.setItem("donation-data", JSON.stringify(submissionData));
-  }
+  localStorage.setItem("donation-data", JSON.stringify(submissionData));
 
   displaySubmissionData();
+  calculateDonation()
+}
+
+function calculateDonation() {
+  let data = JSON.parse(localStorage.getItem("donation-data"));
+  let amount = 0;
+
+  data.forEach(({ donationAmount }) => {
+    amount += donationAmount
+  })
+
+  const amountNode = document.getElementById("total-amount")
+  amountNode.textContent = amount;
 }
 
 // if window is not undefined, meaning, we are in a web app
@@ -108,7 +124,8 @@ if (typeof window !== "undefined") {
     const formNode = document.getElementById('donation-form');
     formNode.addEventListener('submit', onFormSubmit);
     displaySubmissionData()
+    calculateDonation()
   };
 } else {
-  module.exports = { addFormListener, onFormSubmit, validateForm, collectDonationData, saveSubmissionData, displaySubmissionData }
+  module.exports = { addFormListener, onFormSubmit, validateForm, collectDonationData, saveSubmissionData, displaySubmissionData, calculateDonation, deleteLogRow }
 }
