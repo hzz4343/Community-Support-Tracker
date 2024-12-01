@@ -22,7 +22,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensure header stays on top */
+  z-index: 1000;
+  /* Ensure header stays on top */
 }
 
 header nav ul {
@@ -50,7 +51,8 @@ header nav ul li a:hover {
 
 /* Main */
 main {
-  padding-top: calc(1rem + 60px); /* Adjust 60px to match the header height */
+  padding-top: calc(1rem + 60px);
+  /* Adjust 60px to match the header height */
 }
 
 /* Form */
@@ -124,6 +126,9 @@ td button {
   cursor: pointer;
   text-align: center;
   margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 td button:hover {
@@ -164,11 +169,11 @@ td button:hover {
 }
 
 .rate label:hover,
-.rate label:hover ~ label {
+.rate label:hover~label {
   color: #ff9500;
 }
 
-.rate input:checked ~ label {
+.rate input:checked~label {
   color: #ff9500;
 }
 
@@ -185,7 +190,7 @@ td button:hover {
   font-size: 1.5rem;
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 #summary-section p#total-hours {
