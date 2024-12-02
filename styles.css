@@ -200,3 +200,61 @@ td button:hover {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+/* Feedback */
+nav {
+  display: block;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  top: 43px;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  z-index: 1000;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 5px auto;
+  transition: 0.4s;
+}
+
+.menu-toggle {
+  display: none; 
+}
+
+@media (max-width: 809px) {
+  nav {
+    display: none; 
+  }
+
+  .hamburger-menu {
+    display: block; 
+  }
+
+  .menu-toggle:checked + .hamburger-menu + #main-nav {
+    display: block;
+  }
+
+  #main-nav {
+    display: none; 
+  }
+}
+
+@media (min-width: 810px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  #main-nav, nav {
+    display: block; 
+  }
+}
