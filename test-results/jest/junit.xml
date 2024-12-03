@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="40" failures="0" errors="0" time="1.654">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-12-02T20:51:45" time="1.242" tests="11">
-    <testcase classname=" setupForm correctly adds the callback" name=" setupForm correctly adds the callback" time="0.051">
+<testsuites name="jest tests" tests="40" failures="0" errors="0" time="1.739">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-12-03T19:02:51" time="1.41" tests="11">
+    <testcase classname=" setupForm correctly adds the callback" name=" setupForm correctly adds the callback" time="0.065">
     </testcase>
-    <testcase classname=" collectDonationData function correctly collects form data" name=" collectDonationData function correctly collects form data" time="0.01">
+    <testcase classname=" collectDonationData function correctly collects form data" name=" collectDonationData function correctly collects form data" time="0.013">
     </testcase>
-    <testcase classname=" errorFlag raised when any of required fields are empty" name=" errorFlag raised when any of required fields are empty" time="0.011">
+    <testcase classname=" errorFlag raised when any of required fields are empty" name=" errorFlag raised when any of required fields are empty" time="0.013">
     </testcase>
-    <testcase classname=" test if donation amount is not valid" name=" test if donation amount is not valid" time="0.013">
+    <testcase classname=" test if donation amount is not valid" name=" test if donation amount is not valid" time="0.025">
     </testcase>
-    <testcase classname=" test temporary data object is populated" name=" test temporary data object is populated" time="0.032">
+    <testcase classname=" test temporary data object is populated" name=" test temporary data object is populated" time="0.029">
     </testcase>
     <testcase classname=" test that data is correctly stored in localStorage" name=" test that data is correctly stored in localStorage" time="0.005">
     </testcase>
-    <testcase classname=" test that data is correctly retrieved from localStorage and loaded into the table" name=" test that data is correctly retrieved from localStorage and loaded into the table" time="0.008">
+    <testcase classname=" test that data is correctly retrieved from localStorage and loaded into the table" name=" test that data is correctly retrieved from localStorage and loaded into the table" time="0.009">
     </testcase>
-    <testcase classname=" test that the summary section correctly calculates and displays the total amount donated" name=" test that the summary section correctly calculates and displays the total amount donated" time="0.005">
+    <testcase classname=" test that the summary section correctly calculates and displays the total amount donated" name=" test that the summary section correctly calculates and displays the total amount donated" time="0.006">
     </testcase>
-    <testcase classname=" test that the delete button removes a record from the table" name=" test that the delete button removes a record from the table" time="0.011">
+    <testcase classname=" test that the delete button removes a record from the table" name=" test that the delete button removes a record from the table" time="0.018">
     </testcase>
-    <testcase classname=" test that the delete button removes a record from localStorage." name=" test that the delete button removes a record from localStorage." time="0.009">
+    <testcase classname=" test that the delete button removes a record from localStorage." name=" test that the delete button removes a record from localStorage." time="0.012">
     </testcase>
     <testcase classname=" test that the total donation amount in the summary section is updated when a donation is deleted" name=" test that the total donation amount in the summary section is updated when a donation is deleted" time="0.006">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-12-02T20:51:45" time="1.29" tests="12">
-    <testcase classname=" Test that the function is triggered on form submission." name=" Test that the function is triggered on form submission." time="0.055">
+  <testsuite name="Volunteer Hours Tracker" errors="0" failures="0" skipped="0" timestamp="2024-12-03T19:02:51" time="1.423" tests="12">
+    <testcase classname="Volunteer Hours Tracker Test that the function is triggered on form submission." name="Volunteer Hours Tracker Test that the function is triggered on form submission." time="0.069">
     </testcase>
-    <testcase classname=" Test that the function correctly collects form data. &amp; Test that the temporary data object is correctly populated with form data." name=" Test that the function correctly collects form data. &amp; Test that the temporary data object is correctly populated with form data." time="0.033">
+    <testcase classname="Volunteer Hours Tracker Test that the function correctly collects form data. &amp; Test that the temporary data object is correctly populated with form data." name="Volunteer Hours Tracker Test that the function correctly collects form data. &amp; Test that the temporary data object is correctly populated with form data." time="0.032">
     </testcase>
-    <testcase classname=" Test if the function correctly identifies and flags when any of the required fields are left empty." name=" Test if the function correctly identifies and flags when any of the required fields are left empty." time="0.01">
+    <testcase classname="Volunteer Hours Tracker Test if the function correctly identifies and flags when any of the required fields are left empty." name="Volunteer Hours Tracker Test if the function correctly identifies and flags when any of the required fields are left empty." time="0.019">
     </testcase>
-    <testcase classname=" Test if the function correctly identifies and flags when the charity name are not valid." name=" Test if the function correctly identifies and flags when the charity name are not valid." time="0.012">
+    <testcase classname="Volunteer Hours Tracker Test if the function correctly identifies and flags when the charity name are not valid." name="Volunteer Hours Tracker Test if the function correctly identifies and flags when the charity name are not valid." time="0.007">
     </testcase>
-    <testcase classname=" Test if the function correctly identifies and flags when the hours volunteered are not valid." name=" Test if the function correctly identifies and flags when the hours volunteered are not valid." time="0.009">
+    <testcase classname="Volunteer Hours Tracker Test if the function correctly identifies and flags when the hours volunteered are not valid." name="Volunteer Hours Tracker Test if the function correctly identifies and flags when the hours volunteered are not valid." time="0.008">
     </testcase>
-    <testcase classname=" Test if the function correctly identifies and flags when the experience rating is not within the range of 1-5." name=" Test if the function correctly identifies and flags when the experience rating is not within the range of 1-5." time="0.007">
+    <testcase classname="Volunteer Hours Tracker Test if the function correctly identifies and flags when the experience rating is not within the range of 1-5." name="Volunteer Hours Tracker Test if the function correctly identifies and flags when the experience rating is not within the range of 1-5." time="0.007">
     </testcase>
-    <testcase classname=" Test that data is correctly stored in localStorage." name=" Test that data is correctly stored in localStorage." time="0.006">
+    <testcase classname="Volunteer Hours Tracker Test that data is correctly stored in localStorage." name="Volunteer Hours Tracker Test that data is correctly stored in localStorage." time="0.008">
     </testcase>
-    <testcase classname=" Test that data is correctly retrieved from localStorage and loaded into the table." name=" Test that data is correctly retrieved from localStorage and loaded into the table." time="0.016">
+    <testcase classname="Volunteer Hours Tracker Test that data is correctly retrieved from localStorage and loaded into the table." name="Volunteer Hours Tracker Test that data is correctly retrieved from localStorage and loaded into the table." time="0.013">
     </testcase>
-    <testcase classname=" Test that the summary section correctly calculates and displays the total hours volunteered." name=" Test that the summary section correctly calculates and displays the total hours volunteered." time="0.011">
+    <testcase classname="Volunteer Hours Tracker Test that the summary section correctly calculates and displays the total hours volunteered." name="Volunteer Hours Tracker Test that the summary section correctly calculates and displays the total hours volunteered." time="0.018">
     </testcase>
-    <testcase classname=" Test that the delete button removes a record from the table." name=" Test that the delete button removes a record from the table." time="0.015">
+    <testcase classname="Volunteer Hours Tracker Test that the delete button removes a record from the table." name="Volunteer Hours Tracker Test that the delete button removes a record from the table." time="0.018">
     </testcase>
-    <testcase classname=" Test that the delete button removes a record from localStorage." name=" Test that the delete button removes a record from localStorage." time="0.009">
+    <testcase classname="Volunteer Hours Tracker Test that the delete button removes a record from localStorage." name="Volunteer Hours Tracker Test that the delete button removes a record from localStorage." time="0.008">
     </testcase>
-    <testcase classname=" Test that the total volunteered hours in the summary section is updated when a log is deleted." name=" Test that the total volunteered hours in the summary section is updated when a log is deleted." time="0.007">
+    <testcase classname="Volunteer Hours Tracker Test that the total volunteered hours in the summary section is updated when a log is deleted." name="Volunteer Hours Tracker Test that the total volunteered hours in the summary section is updated when a log is deleted." time="0.01">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-12-02T20:51:45" time="1.297" tests="17">
-    <testcase classname=" validateEvent should return true for valid event name" name=" validateEvent should return true for valid event name" time="0.055">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-12-03T19:02:51" time="1.456" tests="17">
+    <testcase classname=" validateEvent should return true for valid event name" name=" validateEvent should return true for valid event name" time="0.064">
     </testcase>
     <testcase classname=" validateEvent should return false if no input is provided" name=" validateEvent should return false if no input is provided" time="0.008">
     </testcase>
-    <testcase classname=" validateRep should return true for valid representative name" name=" validateRep should return true for valid representative name" time="0.01">
+    <testcase classname=" validateRep should return true for valid representative name" name=" validateRep should return true for valid representative name" time="0.007">
     </testcase>
-    <testcase classname=" validateRep should return false if no input is provided" name=" validateRep should return false if no input is provided" time="0.01">
+    <testcase classname=" validateRep should return false if no input is provided" name=" validateRep should return false if no input is provided" time="0.007">
     </testcase>
-    <testcase classname=" validateRep should return false if name doesn&apos;t start with a capital letter" name=" validateRep should return false if name doesn&apos;t start with a capital letter" time="0.016">
+    <testcase classname=" validateRep should return false if name doesn&apos;t start with a capital letter" name=" validateRep should return false if name doesn&apos;t start with a capital letter" time="0.013">
     </testcase>
-    <testcase classname=" validateRep should return false if name is too short" name=" validateRep should return false if name is too short" time="0.01">
+    <testcase classname=" validateRep should return false if name is too short" name=" validateRep should return false if name is too short" time="0.012">
     </testcase>
-    <testcase classname=" validateEmail should return true for valid email" name=" validateEmail should return true for valid email" time="0.008">
+    <testcase classname=" validateEmail should return true for valid email" name=" validateEmail should return true for valid email" time="0.009">
     </testcase>
     <testcase classname=" validateEmail should return false if no input is provided" name=" validateEmail should return false if no input is provided" time="0.005">
     </testcase>
-    <testcase classname=" validateEmail should return false if email is not in the correct format" name=" validateEmail should return false if email is not in the correct format" time="0.008">
+    <testcase classname=" validateEmail should return false if email is not in the correct format" name=" validateEmail should return false if email is not in the correct format" time="0.012">
     </testcase>
-    <testcase classname=" validateRole should return true if a role is selected" name=" validateRole should return true if a role is selected" time="0.006">
+    <testcase classname=" validateRole should return true if a role is selected" name=" validateRole should return true if a role is selected" time="0.01">
     </testcase>
-    <testcase classname=" validateRole should return false if no role is selected" name=" validateRole should return false if no role is selected" time="0.005">
+    <testcase classname=" validateRole should return false if no role is selected" name=" validateRole should return false if no role is selected" time="0.006">
     </testcase>
-    <testcase classname=" validateForm should return true if all fields are valid" name=" validateForm should return true if all fields are valid" time="0.011">
+    <testcase classname=" validateForm should return true if all fields are valid" name=" validateForm should return true if all fields are valid" time="0.013">
     </testcase>
-    <testcase classname=" validateForm should return false if any field is invalid" name=" validateForm should return false if any field is invalid" time="0.006">
+    <testcase classname=" validateForm should return false if any field is invalid" name=" validateForm should return false if any field is invalid" time="0.008">
     </testcase>
-    <testcase classname=" showError displays correct error message" name=" showError displays correct error message" time="0.009">
+    <testcase classname=" showError displays correct error message" name=" showError displays correct error message" time="0.013">
     </testcase>
-    <testcase classname=" onFormSubmit triggers on form submission" name=" onFormSubmit triggers on form submission" time="0.012">
+    <testcase classname=" onFormSubmit triggers on form submission" name=" onFormSubmit triggers on form submission" time="0.013">
     </testcase>
-    <testcase classname=" onFormSubmit collects form data and populates tempDataObj" name=" onFormSubmit collects form data and populates tempDataObj" time="0.016">
+    <testcase classname=" onFormSubmit collects form data and populates tempDataObj" name=" onFormSubmit collects form data and populates tempDataObj" time="0.025">
     </testcase>
     <testcase classname=" formListener successful callback" name=" formListener successful callback" time="0.01">
     </testcase>
