@@ -13,7 +13,7 @@ const {
   displaySubmissionData,
   calculateEvents,
   deleteLogRow
-} = require("../script");
+} = require("../script"); 
 
 let dom;
 let document;
