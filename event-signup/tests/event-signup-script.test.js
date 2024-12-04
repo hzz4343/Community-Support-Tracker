@@ -13,7 +13,7 @@ const {
   displaySubmissionData,
   calculateEvents,
   deleteLogRow
-} = require("../script"); 
+} = require("../event-signup-script"); 
 
 let dom;
 let document;
